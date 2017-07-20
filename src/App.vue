@@ -22,7 +22,7 @@
         class="hidden-md-and-up"></v-toolbar-side-icon>
       <v-toolbar-title><router-link to="/" tag="span" style="cursor: pointer">Title</router-link to="/" tag="span" style="cursor: pointer"></v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toobar-items class="hidden-sm-and-down">
+      <v-toolbar-items class="hidden-sm-and-down">
         <v-btn 
           flat
           v-for="item in menuItems" 
@@ -31,7 +31,7 @@
           <v-icon dark left>{{ item.icon }}</v-icon>
           {{ item.title }}
         </v-btn>
-      </v-toobar-items>      
+      </v-toolbar-items>      
     </v-toolbar>
 
     <main>

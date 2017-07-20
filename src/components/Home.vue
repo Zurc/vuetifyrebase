@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <!-- buttons -->
     <v-layout row wrap>
       <v-flex xs12 sm6 class="text-xs-center text-sm-right">
         <v-btn large to="/meetups" class="primary">Explore Meetups</v-btn>
@@ -8,7 +9,8 @@
         <v-btn large to="/meetup/new" class="primary">Organize Meetup</v-btn>
       </v-flex>
     </v-layout>
-    <v-layout row>
+    <!-- carousel -->
+    <v-layout row class="mt-2">
       <v-flex xs12>
         <v-carousel>
           <v-carousel-item 
@@ -18,6 +20,12 @@
             <div class="title">{{meetup.title}}</div>
           </v-carousel-item>
         </v-carousel>
+      </v-flex>
+    </v-layout>
+    <!-- string -->
+    <v-layout row wrap class="mt-2">
+      <v-flex xs12 class="text-xs-center">
+        <p>Join our awesome meetups!.</p>
       </v-flex>
     </v-layout>
   </v-container>
@@ -36,6 +44,17 @@ export default {
   }
 }
 </script>
+
+<style>
+  .title {
+    position: absolute;
+    bottom: 50px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 2em;
+    padding: 20px;
+  }
+</style>
 
 new Vue({
   el: '#app'
