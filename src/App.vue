@@ -18,7 +18,7 @@
 
     <v-toolbar dark class="primary">
       <v-toolbar-side-icon 
-        @click.native.stop="sideNav = !sideNav"
+        @click.stop="sideNav = !sideNav"
         class="hidden-md-and-up"></v-toolbar-side-icon>
       <v-toolbar-title><router-link to="/" tag="span" style="cursor: pointer">Title</router-link to="/" tag="span" style="cursor: pointer"></v-toolbar-title>
       <v-spacer></v-spacer>
@@ -27,7 +27,6 @@
           flat
           v-for="item in menuItems" 
           :key="item.title"
-          router
           :to="item.link">
           <v-icon dark left>{{ item.icon }}</v-icon>
           {{ item.title }}
