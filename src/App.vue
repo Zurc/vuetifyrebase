@@ -1,12 +1,12 @@
 <template>
   <v-app light>
 
+    <!-- sidebar menu -->
     <v-navigation-drawer temporary v-model="sideNav">
       <v-list>
         <v-list-tile 
           v-for="item in menuItems" 
           :key="item.title"
-          router
           :to="item.link">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -16,11 +16,14 @@
       </v-list>    
     </v-navigation-drawer>
 
+    <!-- main menu -->
     <v-toolbar dark class="primary">
       <v-toolbar-side-icon 
         @click.stop="sideNav = !sideNav"
         class="hidden-md-and-up"></v-toolbar-side-icon>
-      <v-toolbar-title><router-link to="/" tag="span" style="cursor: pointer">Title</router-link to="/" tag="span" style="cursor: pointer"></v-toolbar-title>
+      <v-toolbar-title>
+        <router-link to="/" tag="span" style="cursor: pointer">Title</router-link>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn 

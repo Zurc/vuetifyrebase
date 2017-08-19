@@ -12,11 +12,12 @@
     <!-- carousel -->
     <v-layout row class="mt-2">
       <v-flex xs12>
-        <v-carousel>
+        <v-carousel style="cursor: pointer">
           <v-carousel-item 
-            v-for="(meetup,i) in meetups" 
+            v-for="meetup in meetups" 
             :src="meetup.imageUrl" 
-            :key="meetup.id">
+            :key="meetup.id"
+            @click="onLoadMeetup(meetup.id)">
             <div class="title">{{meetup.title}}</div>
           </v-carousel-item>
         </v-carousel>
@@ -37,15 +38,20 @@ export default {
   data () {
     return {
       meetups: [
-        {'imageUrl': 'http://blog.thetrainline.com/wp-content/uploads/2015/08/london-blog-banner-skyline-days-out.png', 'id': 'jas;dlkfja;slkdfj', 'title': 'Meetup in London'},
+        {'imageUrl': 'http://itsacitything.com/sites/default/files/london-banner_0_2.jpg', 'id': 'jas;dlkfja;slkdfj', 'title': 'Meetup in London'},
         {'imageUrl': 'http://portugalaupair.com/images/paris-banner-new-0415.jpg', 'id': 'jas;dlkfja;slkdfj', 'title': 'Meetup in Paris'}
       ]
+    }
+  },
+  methods: {
+    onLoadMetup (id) {
+      this.$router.push('/meetups/' + id)
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
   .title {
     position: absolute;
     bottom: 50px;
