@@ -39,12 +39,12 @@ export default {
     return {
       meetups: [
         {'imageUrl': 'http://itsacitything.com/sites/default/files/london-banner_0_2.jpg', 'id': 'jas;dlkfja;slkdfj', 'title': 'Meetup in London'},
-        {'imageUrl': 'http://portugalaupair.com/images/paris-banner-new-0415.jpg', 'id': 'jas;dlkfja;slkdfj', 'title': 'Meetup in Paris'}
+        {'imageUrl': 'http://portugalaupair.com/images/paris-banner-new-0415.jpg', 'id': 'jasdlkfjaslkdfj', 'title': 'Meetup in Paris'}
       ]
     }
   },
   methods: {
-    onLoadMetup (id) {
+    onLoadMeetup (id) {
       this.$router.push('/meetups/' + id)
     }
   }
